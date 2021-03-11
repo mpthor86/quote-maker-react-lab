@@ -2,10 +2,13 @@ import React from 'react';
 
 const QuoteCard = (props) =>
   <div>
+    {console.log(props)}
     <div className="card card-inverse card-success card-primary mb-3 text-center">
       <div className="card-block">
         <blockquote className="card-blockquote">
+          <p>{props.quote.content}</p>
           {/* <p>{Render Quote Content}</p> */}
+          <footer>{props.quote.author}</footer>
           {/* <footer>- author <cite title="Source Title">{Render Quote Author}</cite></footer> */}
         </blockquote>
       </div>
@@ -31,8 +34,14 @@ const QuoteCard = (props) =>
           </button>
         </div>
         {/* <div>Votes: {Render Quote Votes}</div> */}
+        {props.quote.votes}
       </div>
     </div>
   </div>;
 
-export default QuoteCard;
+//const mapStateToProps = (state) => {
+//  return {
+//    quote: state.quote
+//  }
+//}
+export default QuoteCard
